@@ -1,0 +1,266 @@
+/* 선택자(selector) */
+/* header안에 div를 선택해야함 */
+
+html,
+body {
+  margin: 0px;
+}
+
+#fixed {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+header {
+  height: 170px;
+}
+.center-align {
+  margin: 0 auto;
+  width: 1130px;
+}
+
+#header-top {
+  float: right;
+  color: #888;
+  letter-spacing: -1px;
+  font-size: 11px;
+  line-height: 22px;
+}
+#header-search {
+  padding-top: 7px;
+  clear: both;
+}
+#header-search h1 {
+  width: 222px;
+  height: 52px;
+  display: inline-block;
+  /*
+  background-image: url(./sp_search.png);
+  background-position: -10px 0px;
+  background-repeat: no-repeat; /* 공간넘어가면 이미지 계속 반복되서 짤려서 나오니까 걍 없애버리기 위한 것.*/
+
+  background: url(./sp_search.png) -10px 0px no-repeat;
+  /*text-indent: 50%;  글자들여쓰기 */
+  /* overflow: hidden;  block 넘어선 글자를 꼼수로 없애버리기 위해서 overflow 넘는 것은 hidden  숨겨버린다 라고 표현해서 없앤다.*/
+  vertical-align: sub;
+  position: relative;
+  top: -1px;
+  left: 185px;
+}
+/* header-search의 자식인 h1을 선택하는 것 >h1 */
+
+#header-search h1 > span {
+  display: none;
+}
+
+#header-search a {
+  text-decoration: none;
+}
+#header-search > h2 {
+  display: none; /* display: none; 는 스크린리더도 못읽는다 오류 -> 검색엔진이 h2로써 2번째로 중요한거구나라고 인지한다,
+  스크린리더에는 나오고 사람눈에는 안나오게 할라면 <span class ="blind"></span>으로 blind라는 속성을 사용해서 진행한다.*/
+}
+
+#header-search > fieldset {
+  margin: 8px 8px 8px 215px;
+  padding: 15px 13px 15px 13px;
+  width: 582px;
+  height: 52px;
+  display: inline-block;
+  border: 2px solid #19ce60;
+  box-sizing: border-box;
+  vertical-align: super;
+  position: relative;
+}
+
+#search-keyboard {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -33px -60px;
+  width: 19px;
+  height: 11px;
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+
+#search-history {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -87px -60px;
+  width: 9px;
+  height: 4px;
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+
+#header-search input {
+  width: 444px;
+  height: 24px;
+  padding: 13px 15px;
+  margin: 1px;
+  background-color: #fff;
+  border: none;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000;
+  font-weight: 700;
+  outline: 0;
+  vertical-align: super;
+}
+
+#header-search button {
+  width: 36px;
+  height: 47px;
+  border: none;
+  padding: 0;
+  background-image: url(./sp_search1.PNG);
+  background-repeat: no-repeat;
+
+  display: inline-block;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*
+#header-center h1 {
+
+}
+
+ 한칸띄우고 h1은 자손을 나타낼때, 보통 한칸 띄우는게 편하니까 자손을 선택하는데 >쓰기 귀찮냐 
+ 혹은 찾는게 어렵냐에 따라 자기 편한대로 하면 댈듯.*/
+
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 16px 0 0 4px;
+  list-style: none;
+  display: inline-block;
+}
+
+nav ul > li {
+  display: inline-block;
+}
+
+nav li span {
+  height: 16px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+  margin-left: 14px;
+}
+
+nav li:first-child span:first-child {
+  width: 30px;
+  background-position: 0 -285px;
+  margin-left: 0;
+}
+
+nav li:nth-child(2) span:first-child {
+  width: 27px;
+  background-position: -279px -52px;
+}
+nav li:nth-child(3) span:first-child {
+  width: 40px;
+  background-position: -100px -182px;
+}
+nav li:nth-child(4) span:first-child {
+  width: 40px;
+  background-position: -101px -156px;
+}
+nav li:nth-child(5) span:first-child {
+  width: 26px;
+  background-position: -279px -156px;
+}
+nav li:nth-child(6) span:first-child {
+  width: 25px;
+  background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+  width: 35px;
+  background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+  width: 26px;
+  background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+  width: 26px;
+  background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+  width: 26px;
+  background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+  width: 39px;
+  background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+  width: 26px;
+  background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+  width: 26px;
+  background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+  width: 26px;
+  background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+  width: 13px;
+  background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+  width: 26px;
+  background-position: -279px 0;
+}
+
+nav li.more:first-child span:first-child {
+  width: 55px;
+  background-position: 0 -104px;
+}
+
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
+nav li.more:first-child span:first-child {
+  width: 55px;
+  background-position: 0 -104px;
+}
