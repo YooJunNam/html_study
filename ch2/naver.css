@@ -1,0 +1,96 @@
+/* 선택자(selector) */
+/* header안에 div를 선택해야함 */
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+#header-center {
+  margin: 0 auto;
+  width: 1130px;
+}
+
+#header-search h1 {
+  width: 222px;
+  height: 52px;
+  display: inline-block;
+  /*
+  background-image: url(./sp_search.png);
+  background-position: -10px 0px;
+  background-repeat: no-repeat; /* 공간넘어가면 이미지 계속 반복되서 짤려서 나오니까 걍 없애버리기 위한 것.*/
+
+  background: url(./sp_search.png) -10px 0px no-repeat;
+  /*text-indent: 50%;  글자들여쓰기 */
+  /* overflow: hidden;  block 넘어선 글자를 꼼수로 없애버리기 위해서 overflow 넘는 것은 hidden  숨겨버린다 라고 표현해서 없앤다.*/
+  vertical-align: sub;
+  position: relative;
+  top: -1px;
+  left: -5px;
+}
+/* header-search의 자식인 h1을 선택하는 것 >h1 */
+
+#header-search h1 > span {
+  display: none;
+}
+
+#header-search a {
+  text-decoration: none;
+}
+#header-search > h2 {
+  display: none; /* display: none; 는 스크린리더도 못읽는다 오류 -> 검색엔진이 h2로써 2번째로 중요한거구나라고 인지한다,
+  스크린리더에는 나오고 사람눈에는 안나오게 할라면 <span class ="blind"></span>으로 blind라는 속성을 사용해서 진행한다.*/
+}
+
+#header-search > fieldset {
+  margin: 8px 8px 8px 8px;
+  padding: 15px 13px 15px 13px;
+  width: 582px;
+  height: 52px;
+  display: inline-block;
+  border: 2px solid #19ce60;
+  box-sizing: border-box;
+  vertical-align: super;
+  position: relative;
+}
+
+#header-search input {
+  width: 444px;
+  height: 24px;
+  padding: 13px 15px;
+  margin: 1px;
+  background-color: #fff;
+  border: none;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000;
+  font-weight: 700;
+  outline: 0;
+  vertical-align: super;
+}
+
+#header-search button {
+  width: 36px;
+  height: 47px;
+  border: none;
+  padding: 0;
+  background-image: url(./sp_search1.PNG);
+  background-repeat: no-repeat;
+
+  display: inline-block;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*
+#header-center h1 {
+
+}
+
+ 한칸띄우고 h1은 자손을 나타낼때, 보통 한칸 띄우는게 편하니까 자손을 선택하는데 >쓰기 귀찮냐 
+ 혹은 찾는게 어렵냐에 따라 자기 편한대로 하면 댈듯.*/
